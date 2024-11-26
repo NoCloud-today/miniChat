@@ -66,7 +66,7 @@ jobs:
             release_tag="$(gh release view -R krille-chan/fluffychat --json name -q .name)"
             #echo "::set-output name=release_tag::$(release_name)"
             echo "release_tag=$release_tag" >> "$GITHUB_OUTPUT"
-            
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -256,6 +256,7 @@ jobs:
           flutter build windows --release
           #tar -czf fluffychat-linux-x64.tar.gz -C build/linux/x64/release/bundle/ .
           #build\windows\x64\runner\Release\fluffychat.exe
+          tar -czf fluffychat-windows.tar.gz build/windows/x64/runner/Release/
 
       - name: Upload Release Asset
         id: upload-release-asset 
@@ -264,9 +265,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           upload_url: ${{ needs.create_release.outputs.release_link }}     
-          asset_path: fluffychat/build/windows/x64/runner/Release/fluffychat.exe
-          asset_name: fluffychat.exe
-          asset_content_type: application/exe
+          asset_path: fluffychat/fluffychat-windows.tar.gz
+          asset_name: fluffychat-windows.tar.gz
+          asset_content_type: application/gzip
   
   build_macos:
     runs-on: macos-latest
