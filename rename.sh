@@ -48,7 +48,7 @@ cp -f miniChat/main_assets/info-logo.png fluffychat/assets/info-logo.png
 cp -f miniChat/icons/web/Icon-512.png fluffychat/web/icons/Icon-512.png
 cp -f miniChat/icons/web/Icon-512.png fluffychat/web/icons/Icon-192.png
 for i in {1..4}; do
-    cp -f miniChat/icons/web/logo.png fluffychat/web/splash/img/dark-$i\x.png
+    cp -f miniChat/icons/web/logo.png fluffychat/web/splash/img/dark-$i\x.png #need to fix sizes
     cp -f miniChat/icons/web/logo.png fluffychat/web/splash/img/light-$i\x.png
 done
 cp -f miniChat/icons/web/favicon.png fluffychat/web/favicon.png #splash
