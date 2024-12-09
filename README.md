@@ -75,12 +75,12 @@ Path to tab favicon for web:
 > 
 * <u>fluffychat/web/favicon.png</u>
 
-Path to icons for web:
+Paths to icons for web:
 > 
 * <u>luffychat/web/icons/Icon-512.png
 * fluffychat/web/icons/Icon-192.png</u>
 
-Path to splash icons for web:
+Paths to splash icons for web:
 > 
 * <u>fluffychat/web/splash/img/dark-1x.png
 * fluffychat/web/splash/img/dark-2x.png
