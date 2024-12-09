@@ -37,7 +37,7 @@ Paths to notification icons for Android (hdpi, mdpi, xhdpi, xxhdpi, xxxhdpi):
 ## IOS
 Paths to app icons for IOS (20...1024 px):
 > 
-* u>fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
+* fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
 * fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
 * fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
 * fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
