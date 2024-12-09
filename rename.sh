@@ -103,10 +103,10 @@ cp -f miniChat/icons/ios/icon_1024.png fluffychat/ios/Runner/Assets.xcassets/App
 
 
 #---macos
-cp -f miniChat/icons/macos/icon_16.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/16-mac.png #20 px
-cp -f miniChat/icons/macos/icon_32.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/32-mac.png #40 px
-cp -f miniChat/icons/macos/icon_64.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/64-mac.png #60 px
-cp -f miniChat/icons/macos/icon_128.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/128-mac.png #29 px
-cp -f miniChat/icons/macos/icon_256.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/256-mac.png #58 px
-cp -f miniChat/icons/macos/icon_512.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/512-mac.png #87 px
-cp -f miniChat/icons/macos/icon_1024.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/1024-mac.png #40 px
+cp -f miniChat/icons/macos/icon_16.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/16-mac.png #16 px
+cp -f miniChat/icons/macos/icon_32.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/32-mac.png #32 px
+cp -f miniChat/icons/macos/icon_64.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/64-mac.png #64 px
+cp -f miniChat/icons/macos/icon_128.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/128-mac.png #128 px
+cp -f miniChat/icons/macos/icon_256.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/256-mac.png #256 px
+cp -f miniChat/icons/macos/icon_512.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/512-mac.png #512 px
+cp -f miniChat/icons/macos/icon_1024.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/1024-mac.png #1024 px
