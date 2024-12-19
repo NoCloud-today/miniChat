@@ -212,7 +212,7 @@ jobs:
           cat fluffychat/android/build.gradle
           ls fluffychat/android/
           cat fluffychat/android/key.jks
-          cat SdkVersion.txt fluffychat/android/build.gradle > fluffychat/android/temp.gradle
+          cat miniChat/SdkVersion.txt fluffychat/android/build.gradle > fluffychat/android/temp.gradle
           echo --------------
           mv fluffychat/android/temp.gradle fluffychat/android/build.gradle
           #cat SdkVersion.txt >> fluffychat/android/build.gradle
