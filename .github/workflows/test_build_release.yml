@@ -100,8 +100,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          tag_name: Test release #fluffychat_${{ steps.tag.outputs.release_tag }}
-          release_name: Test release #Release fluffychat ${{ steps.tag.outputs.release_tag }}
+          tag_name: Test_release #fluffychat_${{ steps.tag.outputs.release_tag }}
+          release_name: Test_release #Release fluffychat ${{ steps.tag.outputs.release_tag }}
           draft: false
           prerelease: false
 
