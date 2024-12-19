@@ -1,4 +1,4 @@
-name: build release
+name: Test build release
 
 on: 
   # schedule:
