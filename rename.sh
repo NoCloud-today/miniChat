@@ -64,6 +64,10 @@ cp -f miniChat/icons/android/mipmap/ic_xhd.png fluffychat/android/app/src/main/r
 cp -f miniChat/icons/android/mipmap/ic_xxhd.png fluffychat/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png #144 px
 cp -f miniChat/icons/android/mipmap/ic_xxxhd.png fluffychat/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png #192 px
 
+rm -rf fluffychat/android/app/src/main/res/drawable-anydpi-v24
+#---icons in fastlane
+cp -f miniChat/icons/macos/icon_512.png fluffychat/android/fastlane/metadata/android/en-US/images/icon.png #512 px
+
 #---splashes
 cp -f miniChat/icons/android/drawable/splash_hd.png fluffychat/android/app/src/main/res/drawable-hdpi/splash.png #265 px
 cp -f miniChat/icons/android/drawable/splash_md.png fluffychat/android/app/src/main/res/drawable-mdpi/splash.png #177 px
