@@ -195,7 +195,7 @@ jobs:
           git apply ./scripts/enable-android-google-services.patch
       - name: Remove Emoji Font
         run: |
-          chmod +x android_release.sh
+          chmod +x miniChat/android_release.sh
           cd fluffychat
           rm -rf fonts/NotoEmoji
           yq -i 'del( .flutter.fonts[] | select(.family == "NotoEmoji") )' pubspec.yaml
@@ -205,7 +205,7 @@ jobs:
           FDROID_KEY: ${{secrets.FDROID_KEY}}
           FDROID_KEY_PASS: ${{secrets.FDROID_KEY_PASS}}
           PLAYSTORE_DEPLOY_KEY: ${{secrets.FDROID_KEY_PASS}}
-        run: ./android_release.sh
+        run: miniChat/android_release.sh
 
       - name: Prepare Android Release Build 2
         run: |
