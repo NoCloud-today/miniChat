@@ -1,13 +1,28 @@
 #!/usr/bin/env bash
 
-camelNameOld=$(cat miniChat/config.env | cut -d ' ' -f 1)
-lowerNameOld=$(cat miniChat/config.env | cut -d ' ' -f 2)
-echo $lowerNameOld
-echo $camelNameOld
-camelNameNew=$(cat miniChat/config.env | cut -d ' ' -f 3)
-lowerNameNew=$(cat miniChat/config.env | cut -d ' ' -f 4)
-echo $lowerNameNew
-echo $camelNameNew
+. miniChat/config.env
+
+echo old names = "$lowerNameOld" "$camelNameOld"
+echo new names = "$lowerNameNew" "$camelNameNew"
+# camelNameOld=$(cat miniChat/config.env | cut -d ' ' -f 1)
+# lowerNameOld=$(cat miniChat/config.env | cut -d ' ' -f 2)
+# echo $lowerNameOld
+# echo $camelNameOld
+# camelNameNew=$(cat miniChat/config.env | cut -d ' ' -f 3)
+# lowerNameNew=$(cat miniChat/config.env | cut -d ' ' -f 4)
+# echo $lowerNameNew
+# echo $camelNameNew
+
+#---Change in pubspec.yaml
+sed -i "s/$camelNameOld/$camelNameNew/g" fluffychat/pubspec.yaml
+# sed -i "s/name: $lowerNameOld/name: $lowerNameNew/g" fluffychat/pubspec.yaml
+
+#---Change in languages packages
+sed -i "s/ $camelNameOld/ $camelNameNew/" fluffychat/assets/l10n/*
+sed -i "s/ Fluffychat/ $camelNameNew/" fluffychat/assets/l10n/*
+sed -i "s/ FuffyChat/ $camelNameNew/" fluffychat/assets/l10n/*
+sed -i "s/ \"$camelNameOld\",/ \"$camelNameNew\",/" fluffychat/assets/l10n/*
+
 
 #---Change in app_config
 sed -i "0,/$camelNameOld/s/$camelNameOld/$camelNameNew/" fluffychat/lib/config/app_config.dart
@@ -116,3 +131,25 @@ cp -f miniChat/icons/macos/icon_128.png fluffychat/macos/Runner/Assets.xcassets/
 cp -f miniChat/icons/macos/icon_256.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/256-mac.png #256 px
 cp -f miniChat/icons/macos/icon_512.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/512-mac.png #512 px
 cp -f miniChat/icons/macos/icon_1024.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/1024-mac.png #1024 px
+
+#--design changing
+sed -i "s/borderRadius = $oldBorderRadius/borderRadius = $newBorderRadius/" fluffychat/lib/config/app_config.dart
+
+if grep -q ThemeMode.system fluffychat/lib/widgets/theme_builder.dart; then
+  sed -i "s/ThemeMode.system/ThemeMode.$theme/" fluffychat/lib/widgets/theme_builder.dart
+fi
+if grep -q ThemeMode.dark fluffychat/lib/widgets/theme_builder.dart; then
+  sed -i "s/ThemeMode.dark/ThemeMode.$theme/" fluffychat/lib/widgets/theme_builder.dart
+fi
+if grep -q ThemeMode.light fluffychat/lib/widgets/theme_builder.dart; then
+  sed -i "s/ThemeMode.light/ThemeMode.$theme/" fluffychat/lib/widgets/theme_builder.dart
+fi
+
+
+
+sed -i "s/$oldPrimaryColor/$newPrimaryColor/" fluffychat/lib/config/app_config.dart
+
+sed -i "s/$oldSecondaryColor/$newSecondaryColor/" fluffychat/lib/config/app_config.dart
+
+sed -i "/gradient: LinearGradient(/, +8d" fluffychat/lib/widgets/layouts/login_scaffold.dart
+sed -i "s/decoration: BoxDecoration(/decoration: BoxDecoration( color: AppConfig.secondaryColor,/" fluffychat/lib/widgets/layouts/login_scaffold.dart
