@@ -156,3 +156,4 @@ sed -i "s/decoration: BoxDecoration(/decoration: BoxDecoration( color: AppConfig
 
 # sed -i "s/primaryColor ?? light?.primaryor/Color? get primaryColor => AppConfig.primaryColor/" fluffychat/lib/widgets/theme_builder.dart
 sed -i "s/primaryColor ?? light?.primary/AppConfig.colorSchemeSeed/" fluffychat/lib/widgets/theme_builder.dart
+sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffychat/lib/widgets/theme_builder.dart
