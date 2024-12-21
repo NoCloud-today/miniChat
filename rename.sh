@@ -154,4 +154,5 @@ sed -i "s/$oldSecondaryColor/$newSecondaryColor/" fluffychat/lib/config/app_conf
 sed -i "/gradient: LinearGradient(/, +8d" fluffychat/lib/widgets/layouts/login_scaffold.dart
 sed -i "s/decoration: BoxDecoration(/decoration: BoxDecoration( color: AppConfig.secondaryColor,/" fluffychat/lib/widgets/layouts/login_scaffold.dart
 
-sed -i "s/Color? get primaryColor => _primaryColor/Color? get primaryColor => AppConfig.primaryColor/" fluffychat/lib/widgets/theme_builder.dart
+# sed -i "s/primaryColor ?? light?.primaryor/Color? get primaryColor => AppConfig.primaryColor/" fluffychat/lib/widgets/theme_builder.dart
+sed -i "s/primaryColor ?? light?.primary/AppConfig.colorSchemeSeed/" fluffychat/lib/widgets/theme_builder.dart
