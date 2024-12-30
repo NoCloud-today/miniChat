@@ -176,4 +176,5 @@ widget="child: Column( \
                 ], \
               ),"
 # echo "$widget"
+sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffychat/lib/widgets/layouts/two_column_layout.dart
 sed -i "s/child: mainView,/$widget/" fluffychat/lib/widgets/layouts/two_column_layout.dart
