@@ -329,49 +329,49 @@ jobs:
           asset_name: cleanchat-windows.tar.gz
           asset_content_type: application/gzip
   
-  build_macos:
-    runs-on: macos-latest
-    needs: create_release
-    steps:
+  # build_macos:
+  #   runs-on: macos-latest
+  #   needs: create_release
+  #   steps:
 
-      - name: Get changed fluffychat
-        uses: actions/download-artifact@v4
-        with:
-          name: fluffychat
-          path: fluffychat
+  #     - name: Get changed fluffychat
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         name: fluffychat
+  #         path: fluffychat
 
-      - uses: actions/checkout@v4
-        with:
-          path: 'miniChat'
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         path: 'miniChat'
       
-      # - name: Prepare fluffychat
-      #   run: |
-      #     git clone https://github.com/krille-chan/fluffychat.git -b main
-      - name: import env
-        run: |
-          cd fluffychat
-          cat .github/workflows/versions.env >> $GITHUB_ENV
+  #     # - name: Prepare fluffychat
+  #     #   run: |
+  #     #     git clone https://github.com/krille-chan/fluffychat.git -b main
+  #     - name: import env
+  #       run: |
+  #         cd fluffychat
+  #         cat .github/workflows/versions.env >> $GITHUB_ENV
           
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          cache: true
+  #     - uses: subosito/flutter-action@v2
+  #       with:
+  #         flutter-version: ${{ env.FLUTTER_VERSION }}
+  #         cache: true
           
-      - run:  |
-          cd fluffychat
-          chmod +x ./scripts/prepare-macos.sh
-          chmod +x ./scripts/build-macos.sh
-          ./scripts/prepare-macos.sh
-          ./scripts/build-macos.sh
-          #build/macos/Build/Products/Release/FluffyChat.app
+  #     - run:  |
+  #         cd fluffychat
+  #         chmod +x ./scripts/prepare-macos.sh
+  #         chmod +x ./scripts/build-macos.sh
+  #         ./scripts/prepare-macos.sh
+  #         ./scripts/build-macos.sh
+  #         #build/macos/Build/Products/Release/FluffyChat.app
 
-      - name: Upload Release Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with:
-          upload_url: ${{ needs.create_release.outputs.release_link }}     
-          asset_path: fluffychat/build/macos/Build/Products/Release/FluffyChat.app
-          asset_name: FluffyChat.app
-          asset_content_type: application/app
+  #     - name: Upload Release Asset
+  #       id: upload-release-asset 
+  #       uses: actions/upload-release-asset@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  #       with:
+  #         upload_url: ${{ needs.create_release.outputs.release_link }}     
+  #         asset_path: fluffychat/build/macos/Build/Products/Release/FluffyChat.app
+  #         asset_name: FluffyChat.app
+  #         asset_content_type: application/app
