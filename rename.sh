@@ -84,7 +84,7 @@ cp -arf miniChat/icons/android/mipmap/. fluffychat/android/app/src/main/res/. #f
 # rm -rf fluffychat/android/app/src/main/res/drawable
 # rm -rf fluffychat/android/app/src/main/res/mipmap-anydpi-v26
 #---icons in fastlane
-cp -f miniChat/icons/macos/icon_512.png fluffychat/android/fastlane/metadata/android/en-US/images/icon.png #512 px
+cp -f miniChat/icons/macos/512-mac.png fluffychat/android/fastlane/metadata/android/en-US/images/icon.png #512 px
 
 #---splashes
 cp -f miniChat/icons/android/drawable/splash_hd.png fluffychat/android/app/src/main/res/drawable-hdpi/splash.png #265 px
@@ -99,39 +99,41 @@ cp -f miniChat/icons/android/drawable/notifications_md.png fluffychat/android/ap
 cp -f miniChat/icons/android/drawable/notifications_xhd.png fluffychat/android/app/src/main/res/drawable-xhdpi/notifications_icon.png #48 px
 cp -f miniChat/icons/android/drawable/notifications_xxhd.png fluffychat/android/app/src/main/res/drawable-xxhdpi/notifications_icon.png #72 px
 cp -f miniChat/icons/android/drawable/notifications_xxxhd.png fluffychat/android/app/src/main/res/drawable-xxxhdpi/notifications_icon.png #96 px
+cp -f miniChat/icons/android/drawable/notifications_icon.xml fluffychat/android/app/src/main/res/drawable-anydpi-v24/notifications_icon.xml #144 px
 
 #---ios
-cp -f miniChat/icons/ios/icon_20x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png #20 px
-cp -f miniChat/icons/ios/icon_20x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png #40 px
-cp -f miniChat/icons/ios/icon_20x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png #60 px
-cp -f miniChat/icons/ios/icon_29x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png #29 px
-cp -f miniChat/icons/ios/icon_29x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png #58 px
-cp -f miniChat/icons/ios/icon_29x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png #87 px
-cp -f miniChat/icons/ios/icon_40x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png #40 px
-cp -f miniChat/icons/ios/icon_40x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png #80 px
-cp -f miniChat/icons/ios/icon_40x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png #120 px
-cp -f miniChat/icons/ios/icon_50x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@1x.png #50 px
-cp -f miniChat/icons/ios/icon_50x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@2x.png #100 px
-cp -f miniChat/icons/ios/icon_57x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@1x.png #57 px
-cp -f miniChat/icons/ios/icon_57x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@2x.png #114 px
-cp -f miniChat/icons/ios/icon_60x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png #120 px
-cp -f miniChat/icons/ios/icon_60x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png #180 px
-cp -f miniChat/icons/ios/icon_72x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@1x.png #72 px
-cp -f miniChat/icons/ios/icon_72x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@2x.png #144 px
-cp -f miniChat/icons/ios/icon_76x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png #76 px
-cp -f miniChat/icons/ios/icon_76x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png #152 px
-cp -f miniChat/icons/ios/icon_83.5x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png #167 px
-cp -f miniChat/icons/ios/icon_1024.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png #1024 px
-
+# cp -f miniChat/icons/ios/icon_20x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png #20 px
+# cp -f miniChat/icons/ios/icon_20x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png #40 px
+# cp -f miniChat/icons/ios/icon_20x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png #60 px
+# cp -f miniChat/icons/ios/icon_29x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png #29 px
+# cp -f miniChat/icons/ios/icon_29x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png #58 px
+# cp -f miniChat/icons/ios/icon_29x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png #87 px
+# cp -f miniChat/icons/ios/icon_40x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png #40 px
+# cp -f miniChat/icons/ios/icon_40x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png #80 px
+# cp -f miniChat/icons/ios/icon_40x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png #120 px
+# cp -f miniChat/icons/ios/icon_50x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@1x.png #50 px
+# cp -f miniChat/icons/ios/icon_50x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@2x.png #100 px
+# cp -f miniChat/icons/ios/icon_57x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@1x.png #57 px
+# cp -f miniChat/icons/ios/icon_57x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@2x.png #114 px
+# cp -f miniChat/icons/ios/icon_60x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png #120 px
+# cp -f miniChat/icons/ios/icon_60x3.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png #180 px
+# cp -f miniChat/icons/ios/icon_72x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@1x.png #72 px
+# cp -f miniChat/icons/ios/icon_72x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@2x.png #144 px
+# cp -f miniChat/icons/ios/icon_76x1.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png #76 px
+# cp -f miniChat/icons/ios/icon_76x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png #152 px
+# cp -f miniChat/icons/ios/icon_83.5x2.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png #167 px
+# cp -f miniChat/icons/ios/icon_1024.png fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png #1024 px
+cp -arf miniChat/icons/ios/. fluffychat/ios/Runner/Assets.xcassets/AppIcon.appiconset/.
 
 #---macos
-cp -f miniChat/icons/macos/icon_16.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/16-mac.png #16 px
-cp -f miniChat/icons/macos/icon_32.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/32-mac.png #32 px
-cp -f miniChat/icons/macos/icon_64.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/64-mac.png #64 px
-cp -f miniChat/icons/macos/icon_128.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/128-mac.png #128 px
-cp -f miniChat/icons/macos/icon_256.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/256-mac.png #256 px
-cp -f miniChat/icons/macos/icon_512.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/512-mac.png #512 px
-cp -f miniChat/icons/macos/icon_1024.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/1024-mac.png #1024 px
+# cp -f miniChat/icons/macos/icon_16.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/16-mac.png #16 px
+# cp -f miniChat/icons/macos/icon_32.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/32-mac.png #32 px
+# cp -f miniChat/icons/macos/icon_64.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/64-mac.png #64 px
+# cp -f miniChat/icons/macos/icon_128.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/128-mac.png #128 px
+# cp -f miniChat/icons/macos/icon_256.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/256-mac.png #256 px
+# cp -f miniChat/icons/macos/icon_512.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/512-mac.png #512 px
+# cp -f miniChat/icons/macos/icon_1024.png fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/1024-mac.png #1024 px
+cp -arf miniChat/icons/macos/. fluffychat/macos/Runner/Assets.xcassets/AppIcon.appiconset/.
 
 #--design changing
 sed -i "s/borderRadius = $oldBorderRadius/borderRadius = $newBorderRadius/" fluffychat/lib/config/app_config.dart
@@ -158,3 +160,20 @@ sed -i "s/decoration: BoxDecoration(/decoration: BoxDecoration( color: AppConfig
 # sed -i "s/primaryColor ?? light?.primaryor/Color? get primaryColor => AppConfig.primaryColor/" fluffychat/lib/widgets/theme_builder.dart
 sed -i "s/primaryColor ?? light?.primary/AppConfig.colorSchemeSeed/" fluffychat/lib/widgets/theme_builder.dart
 sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffychat/lib/widgets/theme_builder.dart
+
+sed -i "120, 137d" fluffychat/lib/pages/homeserver_picker/homeserver_picker_view.dart
+widget="child: Column( \
+                children: [ \
+                  Visibility( \
+                    visible: \
+                        true, \
+                    maintainState: true, \
+                    child: Text(AppConfig.applicationName + \".\", \
+                        textDirection: TextDirection.ltr, \
+                        style: theme.textTheme.titleLarge), \
+                  ), \
+                  Expanded(child: mainView), \
+                ], \
+              ),"
+# echo "$widget"
+sed -i "s/child: mainView,/$widget/" fluffychat/lib/widgets/layouts/two_column_layout.dart
