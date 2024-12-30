@@ -73,15 +73,16 @@ cp -f miniChat/icons/windows/app_icon.ico fluffychat/windows/runner/resources/ap
 
 #---android
 #---app icons
-cp -f miniChat/icons/android/mipmap/ic_hd.png fluffychat/android/app/src/main/res/mipmap-hdpi/ic_launcher.png #72 px
-cp -f miniChat/icons/android/mipmap/ic_md.png fluffychat/android/app/src/main/res/mipmap-mdpi/ic_launcher.png #48 px
-cp -f miniChat/icons/android/mipmap/ic_xhd.png fluffychat/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png #96 px
-cp -f miniChat/icons/android/mipmap/ic_xxhd.png fluffychat/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png #144 px
-cp -f miniChat/icons/android/mipmap/ic_xxxhd.png fluffychat/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png #192 px
+# cp -f miniChat/icons/android/mipmap/ic_hd.png fluffychat/android/app/src/main/res/mipmap-hdpi/ic_launcher.png #72 px
+# cp -f miniChat/icons/android/mipmap/ic_md.png fluffychat/android/app/src/main/res/mipmap-mdpi/ic_launcher.png #48 px
+# cp -f miniChat/icons/android/mipmap/ic_xhd.png fluffychat/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png #96 px
+# cp -f miniChat/icons/android/mipmap/ic_xxhd.png fluffychat/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png #144 px
+# cp -f miniChat/icons/android/mipmap/ic_xxxhd.png fluffychat/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png #192 px
+cp -arf miniChat/icons/android/mipmap/. fluffychat/android/app/src/main/res/. #full folders with new assets
 
-rm -rf fluffychat/android/app/src/main/res/drawable-anydpi-v24
-rm -rf fluffychat/android/app/src/main/res/drawable
-rm -rf fluffychat/android/app/src/main/res/mipmap-anydpi-v26
+# rm -rf fluffychat/android/app/src/main/res/drawable-anydpi-v24
+# rm -rf fluffychat/android/app/src/main/res/drawable
+# rm -rf fluffychat/android/app/src/main/res/mipmap-anydpi-v26
 #---icons in fastlane
 cp -f miniChat/icons/macos/icon_512.png fluffychat/android/fastlane/metadata/android/en-US/images/icon.png #512 px
 
