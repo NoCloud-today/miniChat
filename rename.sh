@@ -187,3 +187,5 @@ sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffycha
 cp -f miniChat/code/lib/widgets/layouts/two_column_layout.dart fluffychat/lib/widgets/layouts/two_column_layout.dart
 
 cp -f miniChat/code/lib/pages/homeserver_picker_view.dart fluffychat/lib/pages/homeserver_picker/homeserver_picker_view.dart
+
+sed -i "/Hero/, +4d" fluffychat/lib/pages/login/login_view.dart
