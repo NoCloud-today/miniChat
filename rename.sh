@@ -159,27 +159,31 @@ sed -i "s/$oldPrimaryColor/$newPrimaryColor/" fluffychat/lib/config/app_config.d
 
 sed -i "s/$oldSecondaryColor/$newSecondaryColor/" fluffychat/lib/config/app_config.dart
 
-sed -i "/gradient: LinearGradient(/, +8d" fluffychat/lib/widgets/layouts/login_scaffold.dart
-sed -i "s/decoration: BoxDecoration(/decoration: BoxDecoration( color: AppConfig.secondaryColor,/" fluffychat/lib/widgets/layouts/login_scaffold.dart
+# sed -i "/gradient: LinearGradient(/, +8d" fluffychat/lib/widgets/layouts/login_scaffold.dart
+# sed -i "s/decoration: BoxDecoration(/decoration: BoxDecoration( color: AppConfig.secondaryColor,/" fluffychat/lib/widgets/layouts/login_scaffold.dart
+cp -f miniChat/code/lib/widgets/layouts/login_scaffold.dart fluffychat/lib/widgets/layouts/login_scaffold.dart
 
 # sed -i "s/primaryColor ?? light?.primaryor/Color? get primaryColor => AppConfig.primaryColor/" fluffychat/lib/widgets/theme_builder.dart
 sed -i "s/primaryColor ?? light?.primary/AppConfig.colorSchemeSeed/" fluffychat/lib/widgets/theme_builder.dart
 sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffychat/lib/widgets/theme_builder.dart
 
-sed -i "120, 137d" fluffychat/lib/pages/homeserver_picker/homeserver_picker_view.dart
-widget="child: Column( \
-                children: [ \
-                  Visibility( \
-                    visible: \
-                        true, \
-                    maintainState: true, \
-                    child: Text(AppConfig.applicationName + \".\", \
-                        textDirection: TextDirection.ltr, \
-                        style: theme.textTheme.titleLarge), \
-                  ), \
-                  Expanded(child: mainView), \
-                ], \
-              ),"
-# echo "$widget"
-sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffychat/lib/widgets/layouts/two_column_layout.dart
-sed -i "s/child: mainView,/$widget/" fluffychat/lib/widgets/layouts/two_column_layout.dart
+# sed -i "120, 137d" fluffychat/lib/pages/homeserver_picker/homeserver_picker_view.dart
+# widget="child: Column( \
+#                 children: [ \
+#                   Visibility( \
+#                     visible: \
+#                         true, \
+#                     maintainState: true, \
+#                     child: Text(AppConfig.applicationName + \".\", \
+#                         textDirection: TextDirection.ltr, \
+#                         style: theme.textTheme.titleLarge), \
+#                   ), \
+#                   Expanded(child: mainView), \
+#                 ], \
+#               ),"
+# # echo "$widget"
+# sed -i "1s/^/import 'package:fluffychat\/config\/app_config.dart';\n/" fluffychat/lib/widgets/layouts/two_column_layout.dart
+# sed -i "s/child: mainView,/$widget/" fluffychat/lib/widgets/layouts/two_column_layout.dart
+cp -f miniChat/code/lib/widgets/layouts/two_column_layout.dart fluffychat/lib/widgets/layouts/two_column_layout.dart
+
+cp -f miniChat/code/lib/pages/homeserver_picker_view.dart fluffychat/lib/pages/homeserver_picker/homeserver_picker_view.dart
